@@ -1,24 +1,14 @@
-# backstage
+# vue-tailwinds-commerce
 
-## Project setup
-```
-npm install
-```
+> A Vue.js project shopping cart
+> use tailwinds development
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+# SPA shopping cart
+[Backstage Page](https://aiden.staryu.net/)
+``` bash
+account: some09one@gmail.com
+password: As1234567898
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
