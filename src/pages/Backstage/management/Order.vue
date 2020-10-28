@@ -111,9 +111,9 @@
 </template>
 
 <script>
-import tables from '../../components/Universal/table/Tables'
-import Pagination from '../../components/Universal/table/Pagination'
-import OrderModal from '../../components/Order/OrderModal'
+import tables from '../../../components/Backstage/Universal/table/Tables'
+import Pagination from '../../../components/Backstage/Universal/table/Pagination'
+import OrderModal from '../../../components/Backstage/Order/OrderModal'
 export default {
   metaInfo: {
     title: 'Order',

@@ -1,4 +1,4 @@
-import Layout from '../components/Layout/Layout.vue'
+import Layout from '../../components/Backstage/Layout/Layout.vue'
 
 export default [{
   path: '/layout',
@@ -8,6 +8,6 @@ export default [{
     meta: { requiresAuth: true },
     path: 'dashboard',
     name: 'dashboard',
-    component: () => import('@/pages/Dashboard')
+    component: () => import('@/pages/Backstage/Dashboard')
   }]
 }]

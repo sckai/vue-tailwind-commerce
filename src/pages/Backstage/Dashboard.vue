@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import ApexPieChart from '../components/Dashboard/ApexPieChart'
-import ApexLineChart from '../components/Dashboard/ApexLineChart'
-import ApexTreeMap from '../components/Dashboard/ApexTreeMap'
+import ApexPieChart from '../../components/Backstage/Dashboard/ApexPieChart'
+import ApexLineChart from '../../components/Backstage/Dashboard/ApexLineChart'
+import ApexTreeMap from '../../components/Backstage/Dashboard/ApexTreeMap'
 export default {
   metaInfo: {
     title: 'DashBoard',

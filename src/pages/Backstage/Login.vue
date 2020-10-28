@@ -134,7 +134,7 @@ export default {
 
 <style lang="scss" scoped>
   .loginBg{
-    background-image: url('../assets/img/loingBg.jpg');
+    background-image: url('../../assets/img/loingBg.jpg');
   }
   .loginForm{
     left: 50%;

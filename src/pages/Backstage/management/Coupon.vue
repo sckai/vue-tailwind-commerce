@@ -96,10 +96,10 @@
 </template>
 
 <script>
-import tables from '../../components/Universal/table/Tables'
-import Pagination from '../../components/Universal/table/Pagination'
-import CouponModal from '../../components/Coupon/CouponModal'
-import DelModal from '../../components/Universal/DelModal'
+import tables from '../../../components/Backstage/Universal/table/Tables'
+import Pagination from '../../../components/Backstage/Universal/table/Pagination'
+import CouponModal from '../../../components/Backstage/Coupon/CouponModal'
+import DelModal from '../../../components/Backstage/Universal/DelModal'
 export default {
   metaInfo: {
     title: 'Coupon',

@@ -116,10 +116,10 @@
 </template>
 
 <script>
-import tables from '../../components/Universal/table/Tables'
-import Pagination from '../../components/Universal/table/Pagination'
-import ProductModal from '../../components/Product/ProductModal'
-import DelModal from '../../components/Universal/DelModal'
+import tables from '../../../components/Backstage/Universal/table/Tables'
+import Pagination from '../../../components/Backstage/Universal/table/Pagination'
+import ProductModal from '../../../components/Backstage/Product/ProductModal'
+import DelModal from '../../../components/Backstage/Universal/DelModal'
 export default {
   metaInfo: {
     title: 'Product',
