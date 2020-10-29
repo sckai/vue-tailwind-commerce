@@ -2,17 +2,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Meta from 'vue-meta'
 
-import login from '../pages/Backstage/Login.vue'
-// import NotFound from '../pages/NotFound.vue'
+// FrontDesk
+import homeRoutes from './FrontDesk/home'
 
+// Backstage
+import login from '../pages/Backstage/Login.vue'
 import dashboardsRoutes from './Backstage/dashboard'
 import managementRoutes from './Backstage/management'
+
+// import NotFound from '../pages/NotFound.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
 
 const ROUTES = [
-  // Default route
   {
     path: '/login',
     name: 'login',
@@ -21,14 +24,7 @@ const ROUTES = [
 ]
   .concat(dashboardsRoutes)
   .concat(managementRoutes)
-
-ROUTES.push({
-  path: '/',
-  meta: {
-    title: '用户管理'
-  },
-  redirect: '/login'
-})
+  .concat(homeRoutes)
 
 // 404 Not Found page
 // ROUTES.push({
