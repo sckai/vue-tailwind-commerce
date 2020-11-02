@@ -4,7 +4,7 @@ module.exports = {
     config
       .plugin('html')
       .tap(args => {
-        args[0].title = '漫步旅遊後台管理'
+        args[0].title = '漫步旅遊'
         return args
       })
   }

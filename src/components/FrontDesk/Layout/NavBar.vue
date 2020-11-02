@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-x-hidden">
     <div class="flex justify-between bg-black w-screen h-16 p-4">
       <div class="w-1/3 my-auto">
         <img
@@ -37,6 +37,7 @@
             <font-awesome-icon
               class="flex fa-2x text-white cursor-pointer"
               :icon="['fas', 'shopping-cart']"
+              @click="ToggleMiniCart"
             />
             <span class="productCount absolute rounded-full leading-tight font-bold h-4 w-4 bg-red-600 text-white text-sm">{{ cartsNum }}</span>
           </div>
@@ -47,6 +48,7 @@
           @click="ToggleDropDown"
         />
       </div>
+      <MiniShoppingCartList :show-mini-cart="showMiniCart" />
     </div>
     <!-- drop down -->
     <nav
@@ -87,16 +89,24 @@
 </template>
 
 <script>
+import MiniShoppingCartList from '../Shopping/MiniShoppingCartList'
 export default {
+  components: {
+    MiniShoppingCartList
+  },
   data () {
     return {
       showDropDown: false,
-      cartsNum: 0
+      cartsNum: 0,
+      showMiniCart: false
     }
   },
   methods: {
     ToggleDropDown () {
       this.showDropDown = !this.showDropDown
+    },
+    ToggleMiniCart () {
+      this.showMiniCart = !this.showMiniCart
     }
   }
 }
