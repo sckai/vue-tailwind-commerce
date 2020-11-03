@@ -4,8 +4,8 @@ export default [{
   path: '/',
   component: Layout,
   children: [{
-    path: '/',
-    name: 'home',
-    component: () => import('@/pages/FrontDesk/Home')
+    path: '/productShop',
+    name: 'productShop',
+    component: () => import('@/pages/FrontDesk/ProductShop')
   }]
 }]

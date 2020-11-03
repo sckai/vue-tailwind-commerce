@@ -9,7 +9,7 @@
 export default {
   metaInfo: {
     title: '',
-    titleTemplate: '漫步旅遊 - %s',
+    titleTemplate: '漫步旅遊  %s',
     htmlAttrs: {
       lang: 'zh'
     }

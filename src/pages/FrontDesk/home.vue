@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="flex flex-wrap w-full md:w-12/24 flex justify-between mx-auto my-3 p-2">
-        <div class="my-auto w-full md:w-7/24">
+        <div class="my-auto w-full md:w-6/24">
           <img
             class="w-64 md:w-32 h-32 md:h-16 mx-auto"
             src="https://cdn.stocksnap.io/img-thumbs/960w/woman-sitting_VWDZANCNZJ.jpg"
@@ -43,11 +43,11 @@
           清倉大甩賣，最高可享<font class="text-red-500">
             70％Off
           </font>。所有銷售都是最終的！
-          <div class="text-center md:text-left p-2 tracking-normal text-sm text-gray-400">
+          <div class="text-center md:text-left p-2 tracking-normal text-sm text-gray-500">
             最後機會利用我們的折扣！
           </div>
         </div>
-        <div class="w-full md:w-7/24 my-auto">
+        <div class="w-full md:w-8/24 my-auto">
           <a
             class="my-auto bg-black py-3 w-32 rounded-sm hover:bg-gray-600 p-2"
             href="#"

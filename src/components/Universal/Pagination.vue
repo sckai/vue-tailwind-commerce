@@ -3,14 +3,16 @@
     <div class="bg-white px-4 py-3 flex items-center justify-between border-gray-200 sm:px-6">
       <div class="flex-1 flex justify-between sm:hidden">
         <a
-          href="#"
+          :class="{'cursor-not-allowed': currentPage === 1}"
           class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+          @click.prevent="PageLess"
         >
           Previous
         </a>
         <a
-          href="#"
+          :class="{'cursor-not-allowed': totalPage === currentPage || totalPage === 1}"
           class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+          @click.prevent="PageAdd"
         >
           Next
         </a>
@@ -19,8 +21,7 @@
         <div>
           <nav class="relative z-0 inline-flex shadow-sm">
             <a
-              href="#"
-              class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
+              class="relative inline-flex items-center cursor-pointer px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
               aria-label="Previous"
               :class="{'cursor-not-allowed': currentPage === 1}"
               @click.prevent="PageLess"
@@ -42,16 +43,14 @@
             <a
               v-for="page in totalPage"
               :key="page"
-              href="#"
-              class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+              class="-ml-px relative inline-flex items-center cursor-pointer px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
               :class="{'border-gray-400 text-lg font-bold': page === currentPage}"
               @click.prevent="TogglePage(page)"
             >
               {{ page }}
             </a>
             <a
-              href="#"
-              class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
+              class="-ml-px relative inline-flex items-center cursor-pointer px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
               :class="{'cursor-not-allowed': totalPage === currentPage || totalPage === 1}"
               aria-label="Next"
               @click.prevent="PageAdd"

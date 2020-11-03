@@ -117,7 +117,7 @@
 
 <script>
 import tables from '../../../components/Backstage/Universal/table/Tables'
-import Pagination from '../../../components/Backstage/Universal/table/Pagination'
+import Pagination from '../../../components/Universal/Pagination'
 import ProductModal from '../../../components/Backstage/Product/ProductModal'
 import DelModal from '../../../components/Backstage/Universal/DelModal'
 export default {

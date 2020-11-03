@@ -112,7 +112,7 @@
 
 <script>
 import tables from '../../../components/Backstage/Universal/table/Tables'
-import Pagination from '../../../components/Backstage/Universal/table/Pagination'
+import Pagination from '../../../components/Universal/Pagination'
 import OrderModal from '../../../components/Backstage/Order/OrderModal'
 export default {
   metaInfo: {
