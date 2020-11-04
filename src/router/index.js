@@ -5,6 +5,7 @@ import Meta from 'vue-meta'
 // FrontDesk
 import homeRouter from './FrontDesk/home'
 import productShopRouter from './FrontDesk/productShop'
+import aboutRouter from './FrontDesk/about'
 
 // Backstage
 import login from '../pages/Backstage/Login.vue'
@@ -27,6 +28,7 @@ const ROUTES = [
   .concat(managementRoutes)
   .concat(homeRouter)
   .concat(productShopRouter)
+  .concat(aboutRouter)
 
 // 404 Not Found page
 // ROUTES.push({

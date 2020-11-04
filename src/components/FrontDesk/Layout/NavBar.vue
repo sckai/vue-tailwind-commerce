@@ -2,30 +2,36 @@
   <div class="overflow-x-hidden">
     <div class="flex justify-between bg-black w-screen h-16 p-4">
       <div class="w-1/3 my-auto">
-        <img
-          src="https://ld-wp.template-help.com/woostroid2/skins/cosmetics/wp-content/uploads/2018/12/logo.png"
-          alt=""
-        >
+        <router-link :to="{ name: 'home' }">
+          <img
+            src="https://ld-wp.template-help.com/woostroid2/skins/cosmetics/wp-content/uploads/2018/12/logo.png"
+            alt=""
+          >
+        </router-link>
       </div>
       <div class="w-1/3 my-auto font-bold tracking-wide text-white text-sm hidden md:block">
         <ul class="list-none">
           <li class="inline cursor-pointer mx-4 hover:text-gray-400">
-            <a href="#">
-              館藏
-            </a>
+            <router-link :to="{ name: 'productShop' }">
+              <a>
+                主題旅行
+              </a>
+            </router-link>
           </li>
           <li class="inline cursor-pointer mx-4 hover:text-gray-400">
-            <a href="#">
-              關於
-            </a>
+            <router-link :to="{ name: 'about' }">
+              <a>
+                關於
+              </a>
+            </router-link>
           </li>
           <li class="inline cursor-pointer mx-4 hover:text-gray-400">
-            <a href="#">
+            <a>
               銷售和報價
             </a>
           </li>
           <li class="inline cursor-pointer mx-4 hover:text-gray-400">
-            <a href="#">
+            <a>
               聯絡我們
             </a>
           </li>
@@ -39,11 +45,11 @@
               :icon="['fas', 'shopping-cart']"
               @click="ToggleMiniCart"
             />
-            <span class="productCount absolute rounded-full leading-tight font-bold h-4 w-4 bg-red-600 text-white text-sm">{{ cartsNum }}</span>
+            <span class="productCount absolute rounded-full leading-tight font-bold h-4 w-4 bg-red-600 text-white text-sm">{{ CartsNum }}</span>
           </div>
         </div>
         <font-awesome-icon
-          class="fa-2x text-white cursor-pointer mb-1 hover:text-gray-400 md:hidden"
+          class="fa-2x text-white cursor-pointer mb-1 hover:text-gray-400 mr-2 md:hidden"
           :icon="['fas', 'bars']"
           @click="ToggleDropDown"
         />
@@ -57,26 +63,26 @@
     >
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
+          <router-link :to="{ name: 'productShop' }">
+            <a
+              class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
+            >
+              主題旅行
+            </a>
+          </router-link>
+          <router-link :to="{ name: 'about' }">
+            <a
+              class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
+            >
+              關於
+            </a>
+          </router-link>
           <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
-          >
-            館藏
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
-          >
-            關於
-          </a>
-          <a
-            href="#responsive-header"
             class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
           >
             銷售和報價
           </a>
           <a
-            href="#responsive-header"
             class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
           >
             聯絡我們
@@ -97,8 +103,13 @@ export default {
   data () {
     return {
       showDropDown: false,
-      cartsNum: 0,
-      showMiniCart: false
+      showMiniCart: false,
+      cartList: []
+    }
+  },
+  computed: {
+    CartsNum () {
+      return this.$store.getters.cartsNum
     }
   },
   methods: {

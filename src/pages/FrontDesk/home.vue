@@ -2,31 +2,47 @@
   <div>
     <div class="p-1">
       <div class="flex flex-wrap md:flex-no-wrap overflow-hidden">
-        <div class="w-6/12 md:w-7/24 p-1 text-white hover:text-black cursor-pointer transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-110 hover:z-50">
+        <div class="w-6/12 md:w-7/24 p-1 text-white hover:text-black transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-110 hover:z-50">
           <div class="ice img-height flex items-end w-full bg-blue-900 h-64 pb-16 bg-center-center bg-cover">
-            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 rounded-lg">
-              醉美北歐
+            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 cursor-pointer rounded-lg">
+              <router-link
+                :to="{ name: 'productShop', params: { category: '歐洲' }}"
+              >
+                醉美北歐
+              </router-link>
             </div>
           </div>
         </div>
-        <div class="w-6/12 md:w-6/24 p-1 text-white hover:text-black cursor-pointer transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:z-50">
+        <div class="w-6/12 md:w-6/24 p-1 text-white hover:text-black transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:z-50">
           <div class="historic-site img-height flex items-end w-full bg-blue-900 h-64 pb-16 bg-center-center bg-cover">
-            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 rounded-lg">
-              南亞風情
+            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 cursor-pointer rounded-lg">
+              <router-link
+                :to="{ name: 'productShop', params: { category: '東南亞' }}"
+              >
+                南亞風情
+              </router-link>
             </div>
           </div>
         </div>
-        <div class="w-6/12 md:w-6/24 p-1 text-white hover:text-black cursor-pointer transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:z-50">
+        <div class="w-6/12 md:w-6/24 p-1 text-white hover:text-black transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:z-50">
           <div class="sea img-height flex items-end w-full bg-blue-900 h-64 pb-16 bg-center-left bg-cover">
-            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 rounded-lg">
-              夏日炎海
+            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 cursor-pointer rounded-lg">
+              <router-link
+                :to="{ name: 'productShop', params: { category: '台港澳' }}"
+              >
+                夏日炎海
+              </router-link>
             </div>
           </div>
         </div>
-        <div class="w-6/12 md:w-7/24 p-1 text-white hover:text-black cursor-pointer transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:z-50">
+        <div class="w-6/12 md:w-7/24 p-1 text-white hover:text-black transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:z-50">
           <div class="europe img-height flex items-end w-full bg-blue-900 h-64 pb-16 bg-center-center bg-cover">
-            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 rounded-lg">
-              歐洲精選
+            <div class="w-64 text-2xl p-3 mb-3 mx-auto bg-gray-200 bg-opacity-25 cursor-pointer rounded-lg">
+              <router-link
+                :to="{ name: 'productShop', params: { category: '歐洲' }}"
+              >
+                歐洲精選
+              </router-link>
             </div>
           </div>
         </div>
@@ -36,7 +52,7 @@
           <img
             class="w-64 md:w-32 h-32 md:h-16 mx-auto"
             src="https://cdn.stocksnap.io/img-thumbs/960w/woman-sitting_VWDZANCNZJ.jpg"
-            alt="123"
+            alt="找不到圖片"
           >
         </div>
         <div class="w-full md:w-10/24 text-xl p-2">
@@ -48,14 +64,18 @@
           </div>
         </div>
         <div class="w-full md:w-8/24 my-auto">
-          <a
-            class="my-auto bg-black py-3 w-32 rounded-sm hover:bg-gray-600 p-2"
-            href="#"
+          <router-link
+            :to="{ name: 'productShop'}"
           >
-            <span class="text-white">
-              選購所有產品
-            </span>
-          </a>
+            <a
+              class="my-auto bg-black py-3 w-32 rounded-sm hover:bg-gray-600 p-2"
+              href="#"
+            >
+              <span class="text-white">
+                選購所有產品
+              </span>
+            </a>
+          </router-link>
         </div>
       </div>
     </div>

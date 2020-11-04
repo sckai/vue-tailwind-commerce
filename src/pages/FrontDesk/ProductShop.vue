@@ -177,6 +177,9 @@ export default {
     }
   },
   created () {
+    if (Object.keys(this.$route.params).length !== 0) {
+      this.selectCateory = this.$route.params.category
+    }
     this.GetProductAll()
   },
   methods: {
@@ -278,6 +281,7 @@ export default {
       obj.isAddToCartLoding = true
       this.$http.post(api, { data: sendData }).then((response) => {
         if (response.data.success) {
+          this.$store.dispatch('UpdateCartList')
           this.$swal('', response.data.message, 'success')
           obj.quantity = 1
         } else {
