@@ -69,7 +69,6 @@
           >
             <a
               class="my-auto bg-black py-3 w-32 rounded-sm hover:bg-gray-600 p-2"
-              href="#"
             >
               <span class="text-white">
                 選購所有產品

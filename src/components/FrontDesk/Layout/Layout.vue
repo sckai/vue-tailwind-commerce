@@ -1,10 +1,10 @@
 <template>
   <div>
     <NavBar />
-    <router-view />
-    <div>
-      <FooterBar />
+    <div class="mainContent">
+      <router-view />
     </div>
+    <FooterBar />
   </div>
 </template>
 
@@ -18,3 +18,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.mainContent{
+  min-height: calc(100vh - 64px - 88px);
+}
+</style>

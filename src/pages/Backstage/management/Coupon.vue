@@ -33,6 +33,14 @@
         </div>
       </template>
       <template
+        slot="due_date"
+        slot-scope="props"
+      >
+        <div>
+          {{ ConversionDate(props.obj.due_date) }}
+        </div>
+      </template>
+      <template
         slot="is_enabled"
         slot-scope="props"
       >
@@ -96,7 +104,7 @@
 </template>
 
 <script>
-import tables from '../../../components/Backstage/Universal/table/Tables'
+import tables from '../../../components/Universal/table/Tables'
 import Pagination from '../../../components/Universal/Pagination'
 import CouponModal from '../../../components/Backstage/Coupon/CouponModal'
 import DelModal from '../../../components/Backstage/Universal/DelModal'
@@ -120,9 +128,9 @@ export default {
         total_pages: 1,
         current_page: 1
       },
-      tableColumns: ['title', 'coupon', 'percent', 'time', 'is_enabled', 'control'],
+      tableColumns: ['title', 'code', 'percent', 'due_date', 'is_enabled', 'control'],
       tableOptions: {
-        headings: { title: '優惠名稱', coupon: '優惠碼', percent: '折扣百分比', time: '到期日', is_enabled: '是否啟用', control: '操作' }
+        headings: { title: '優惠名稱', code: '優惠碼', percent: '折扣百分比', due_date: '到期日', is_enabled: '是否啟用', control: '操作' }
       },
       isPageLoading: false,
       couponModalTitle: '新增優惠卷',
@@ -145,6 +153,14 @@ export default {
     this.GetCouponList()
   },
   methods: {
+    ConversionDate (timestamp) {
+      const date = new Date(timestamp)
+      const year = date.getFullYear()
+      const month = `0${date.getMonth() + 1}`
+      const day = `0${date.getDate()}`
+      const formattedTime = `${year}-${month.substr(-2)}-${day.substr(-2)}`
+      return formattedTime
+    },
     OpenCreateCouponModal () {
       this.showCouponModal = true
       this.isCreate = true

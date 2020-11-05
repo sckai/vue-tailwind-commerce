@@ -39,7 +39,6 @@
 <style lang="scss" scoped>
 .jumbotron{
   background-image: url('../../../src/assets/img/jumbotron-bg.jpg');
-  // max-width: 1024px;
   height: 380px;
 }
 .travel-style{

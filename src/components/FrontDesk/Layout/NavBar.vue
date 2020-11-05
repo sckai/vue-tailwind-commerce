@@ -26,14 +26,18 @@
             </router-link>
           </li>
           <li class="inline cursor-pointer mx-4 hover:text-gray-400">
-            <a>
-              銷售和報價
-            </a>
+            <router-link :to="{ name: 'sales' }">
+              <a>
+                促銷
+              </a>
+            </router-link>
           </li>
           <li class="inline cursor-pointer mx-4 hover:text-gray-400">
-            <a>
-              聯絡我們
-            </a>
+            <router-link :to="{ name: 'shopping' }">
+              <a>
+                購物清單
+              </a>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -49,7 +53,7 @@
           </div>
         </div>
         <font-awesome-icon
-          class="fa-2x text-white cursor-pointer mb-1 hover:text-gray-400 mr-2 md:hidden"
+          class="fa-2x text-white cursor-pointer mb-1 hover:text-gray-400 md:hidden"
           :icon="['fas', 'bars']"
           @click="ToggleDropDown"
         />
@@ -77,16 +81,20 @@
               關於
             </a>
           </router-link>
-          <a
-            class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
-          >
-            銷售和報價
-          </a>
-          <a
-            class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
-          >
-            聯絡我們
-          </a>
+          <router-link :to="{ name: 'sales' }">
+            <a
+              class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
+            >
+              促銷
+            </a>
+          </router-link>
+          <router-link :to="{ name: 'shopping' }">
+            <a
+              class="block mt-4 lg:inline-block lg:mt-0 hover:text-gray-400"
+            >
+              購物清單
+            </a>
+          </router-link>
         </div>
       </div>
     </nav>

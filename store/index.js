@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cartList: [],
-    cartsNum: 0
+    cartsNum: 0,
+    personalInformation: {}
   },
   actions: {
     UpdateCartList (context, data) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
         this.$swal('網路異常', error, 'error')
         console.log(error)
       })
+    },
+    UpdatePersonalInformation (context, data) {
+      context.commit('UPDATEPERSONALINFORMATION', data)
     }
   },
   mutations: {
@@ -30,10 +34,14 @@ export default new Vuex.Store({
     },
     UPDATECARTSNUM (state, num) {
       state.cartsNum = num
+    },
+    UPDATEPERSONALINFORMATION (state, data) {
+      state.personalInformation = data
     }
   },
   getters: {
     cartList: state => state.cartList,
-    cartsNum: state => state.cartsNum
+    cartsNum: state => state.cartsNum,
+    personalInformation: state => state.personalInformation
   }
 })

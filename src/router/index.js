@@ -6,6 +6,8 @@ import Meta from 'vue-meta'
 import homeRouter from './FrontDesk/home'
 import productShopRouter from './FrontDesk/productShop'
 import aboutRouter from './FrontDesk/about'
+import salesRouter from './FrontDesk/sales'
+import shoppingListRouter from './FrontDesk/shoppingList'
 
 // Backstage
 import login from '../pages/Backstage/Login.vue'
@@ -29,6 +31,8 @@ const ROUTES = [
   .concat(homeRouter)
   .concat(productShopRouter)
   .concat(aboutRouter)
+  .concat(salesRouter)
+  .concat(shoppingListRouter)
 
 // 404 Not Found page
 // ROUTES.push({

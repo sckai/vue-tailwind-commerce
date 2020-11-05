@@ -111,7 +111,7 @@
 </template>
 
 <script>
-import tables from '../../../components/Backstage/Universal/table/Tables'
+import tables from '../../..//components/Universal/table/Tables'
 import Pagination from '../../../components/Universal/Pagination'
 import OrderModal from '../../../components/Backstage/Order/OrderModal'
 export default {
@@ -150,8 +150,8 @@ export default {
     ConversionDate (timestamp) {
       const date = new Date(timestamp * 1000)
       const year = date.getFullYear()
-      const month = `0${date.getMonth()}`
-      const day = `0${date.getDay()}`
+      const month = `0${date.getMonth() + 1}`
+      const day = `0${date.getDate()}`
       const hours = date.getHours()
       const minutes = `0${date.getMinutes()}`
       const seconds = `0${date.getSeconds()}`

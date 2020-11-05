@@ -282,8 +282,15 @@ export default {
     // API
     CreatCoupon () {
       const api = `${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`
+      const sendData = {
+        title: this.tempCoupon.title,
+        is_enabled: this.tempCoupon.is_enabled,
+        percent: this.tempCoupon.percent,
+        due_date: Date.parse(this.tempCoupon.time),
+        code: this.tempCoupon.coupon
+      }
       this.isCreateLoding = true
-      this.$http.post(api, { data: this.tempCoupon }).then((response) => {
+      this.$http.post(api, { data: sendData }).then((response) => {
         if (response.data.success) {
           this.$refs.form.reset()
           this.$emit('creatSuccess')
@@ -300,8 +307,15 @@ export default {
     },
     EditCoupon () {
       const api = `${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${this.tempCoupon.id}`
+      const sendData = {
+        title: this.tempCoupon.title,
+        is_enabled: this.tempCoupon.is_enabled,
+        percent: this.tempCoupon.percent,
+        due_date: Date.parse(this.tempCoupon.time),
+        code: this.tempCoupon.coupon
+      }
       this.isEditLoding = true
-      this.$http.put(api, { data: this.tempCoupon }).then((response) => {
+      this.$http.put(api, { data: sendData }).then((response) => {
         if (response.data.success) {
           this.$emit('EditSuccess')
           this.$swal(response.data.message, '', 'success')
