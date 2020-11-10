@@ -3,14 +3,16 @@
     <div class="flex justify-between px-5">
       <div class="relative inline-block text-left">
         <div class="flex">
-          <span class="rounded-md shadow-sm">
+          <span
+            class="rounded-md shadow-sm"
+          >
             <button
               id="options-menu"
               type="button"
               class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
+              @blur="CategoryMenuBlur"
               @click="ToggleCategoryMenu"
             >
-              <!-- @blur="CategoryMenuBlur" -->
               Filter
               <svg
                 class="-mr-1 ml-2 h-5 w-5"
@@ -234,7 +236,9 @@ export default {
       this.GetRangeProduct()
     },
     CategoryMenuBlur () {
-      this.showCategoryDropdown = false
+      setTimeout(() => {
+        this.showCategoryDropdown = false
+      }, 500)
     },
     ToggleCategoryMenu () {
       this.currentPage = 1

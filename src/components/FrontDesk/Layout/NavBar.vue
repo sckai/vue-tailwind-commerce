@@ -48,6 +48,7 @@
               class="flex fa-2x text-white cursor-pointer"
               :icon="['fas', 'shopping-cart']"
               @click="ToggleMiniCart"
+              @blur="HiddenMiniCart"
             />
             <span class="productCount absolute rounded-full leading-tight font-bold h-4 w-4 bg-red-600 text-white text-sm">{{ CartsNum }}</span>
           </div>
@@ -58,7 +59,9 @@
           @click="ToggleDropDown"
         />
       </div>
-      <MiniShoppingCartList :show-mini-cart="showMiniCart" />
+      <MiniShoppingCartList
+        :show-mini-cart="showMiniCart"
+      />
     </div>
     <!-- drop down -->
     <nav
@@ -121,6 +124,11 @@ export default {
     }
   },
   methods: {
+    HiddenMiniCart () {
+      setTimeout(() => {
+        this.showMiniCart = false
+      }, 500)
+    },
     ToggleDropDown () {
       this.showDropDown = !this.showDropDown
     },
