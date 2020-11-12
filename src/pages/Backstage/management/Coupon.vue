@@ -137,13 +137,18 @@ export default {
       isCreate: false,
       showCouponModal: false,
       couponData: {
-        coupon: '',
-        id: '',
+        imageUrl: '',
+        title: '',
+        category: '',
+        unit: '',
+        origin_price: 0,
+        price: 0,
+        description: '',
+        content: '',
         is_enabled: 0,
-        num: 0,
-        percent: 0,
-        time: '',
-        title: ''
+        code: '',
+        due_date: '',
+        id: 0
       },
       showDelModal: false,
       delApiPath: ''
@@ -167,7 +172,10 @@ export default {
       this.productModalTitle = '新增優惠卷'
     },
     OpenEditCouponModal (obj) {
-      this.couponData = obj
+      // due_date
+      const sendData = obj
+      sendData.due_date = this.ConversionDate(sendData.due_date)
+      this.couponData = Object.assign({}, sendData)
       this.showCouponModal = true
       this.isCreate = false
       this.couponModalTitle = '編輯優惠卷'
@@ -188,13 +196,18 @@ export default {
     },
     CouponDataDefault () {
       this.couponData = {
-        coupon: '',
-        id: '',
+        imageUrl: '',
+        title: '',
+        category: '',
+        unit: '',
+        origin_price: 0,
+        price: 0,
+        description: '',
+        content: '',
         is_enabled: 0,
-        num: 0,
-        percent: 0,
-        time: '',
-        title: ''
+        code: '',
+        due_date: '',
+        id: 0
       }
     },
     OpenDelModal (obj) {

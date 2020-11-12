@@ -67,7 +67,7 @@ export default {
         this.shoppingComponent = 'PersonalInformation'
       } else if (stepValue === 3) {
         this.shoppingComponent = 'PayCheck'
-        this.personalInformation = personalInformation
+        this.$store.dispatch('UpdatePersonalInformation', personalInformation)
       } else if (stepValue === 4) {
         this.shoppingComponent = 'PayCheck'
       }

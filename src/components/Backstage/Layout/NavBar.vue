@@ -4,11 +4,11 @@
       <div class="relative flex items-center justify-between h-16">
         <div class="flex-1 flex items-center sm:items-stretch">
           <div class="flex justify-center items-center">
-            <img
+            <!-- <img
               class="hidden lg:inline-block h-8 w-auto"
               src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg"
               alt="Workflow logo"
-            >
+            > -->
             <span class="text-white font-bold ml-2">
               漫步旅遊
             </span>
@@ -16,7 +16,7 @@
           <div class="inset-y-0 left-0 ml-3 flex items-center">
             <!-- Mobile menu button-->
             <button
-              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none transition duration-150 ease-in-out"
               aria-label="Main menu"
               aria-expanded="false"
               @click="DisplaySidebar"

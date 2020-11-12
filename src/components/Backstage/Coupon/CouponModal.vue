@@ -66,7 +66,7 @@
                     >
                       <input
                         id="coupon"
-                        v-model="tempCoupon.coupon"
+                        v-model="tempCoupon.code"
                         type="text"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight uppercase focus:outline-none focus:shadow-outline"
                         placeholder="請輸入優惠碼"
@@ -106,7 +106,7 @@
                     >
                       <input
                         id="time"
-                        v-model="tempCoupon.time"
+                        v-model="tempCoupon.due_date"
                         type="text"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         placeholder="請輸入到期日"
@@ -210,8 +210,8 @@ extend('between', {
 })
 extend('date', {
   validate: value => {
-    const regEx = /^\d{4}-\d{2}-\d{2}$/
-    return value.match(regEx)
+    const regEx = /^\d{4}-\d{2}-\d{2}$/.test(value)
+    return regEx
   },
   message: '輸入正確日期格式ex:2020-05-20'
 })
@@ -246,6 +246,8 @@ export default {
           description: '',
           content: '',
           is_enabled: 0,
+          code: '',
+          due_date: '',
           id: 0
         }
       }
@@ -263,6 +265,8 @@ export default {
         description: '',
         content: '',
         is_enabled: 0,
+        code: '',
+        due_date: '',
         id: 0
       },
       isCreateLoding: false,
@@ -275,6 +279,7 @@ export default {
     }
   },
   methods: {
+    // Event
     CancelBtn () {
       this.$refs.form.reset()
       this.$emit('Cancle', false)
@@ -286,8 +291,8 @@ export default {
         title: this.tempCoupon.title,
         is_enabled: this.tempCoupon.is_enabled,
         percent: this.tempCoupon.percent,
-        due_date: Date.parse(this.tempCoupon.time),
-        code: this.tempCoupon.coupon
+        due_date: Date.parse(this.tempCoupon.due_date),
+        code: this.tempCoupon.code
       }
       this.isCreateLoding = true
       this.$http.post(api, { data: sendData }).then((response) => {
@@ -311,8 +316,8 @@ export default {
         title: this.tempCoupon.title,
         is_enabled: this.tempCoupon.is_enabled,
         percent: this.tempCoupon.percent,
-        due_date: Date.parse(this.tempCoupon.time),
-        code: this.tempCoupon.coupon
+        due_date: Date.parse(this.tempCoupon.due_date),
+        code: this.tempCoupon.code
       }
       this.isEditLoding = true
       this.$http.put(api, { data: sendData }).then((response) => {

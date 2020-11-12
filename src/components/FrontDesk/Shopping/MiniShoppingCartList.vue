@@ -46,9 +46,13 @@
     </table>
 
     <div class="text-right my-4 mx-4">
-      <a
-        class="checkout border-2 rounded-sm bg-black hover:bg-gray-700 text-white"
-      >前往結帳</a>
+      <router-link :to="{ name: 'shopping' }">
+        <a
+          class="checkout border-2 rounded-sm cursor-pointer bg-black hover:bg-gray-700 text-white"
+        >
+          前往結帳
+        </a>
+      </router-link>
     </div>
   </div>
 </template>

@@ -30,19 +30,19 @@
       >
         <div class="text-left">
           <span>名稱:</span>
-          {{ props.obj.user.name }}
+          {{ props.obj.user === undefined ? '' : props.obj.user.name }}
         </div>
         <div class="text-left">
           <span>電話:</span>
-          {{ props.obj.user.tel }}
+          {{ props.obj.user === undefined ? '' : props.obj.user.tel }}
         </div>
         <div class="text-left">
           <span>Mail:</span>
-          {{ props.obj.user.email }}
+          {{ props.obj.user === undefined ? '' : props.obj.user.email }}
         </div>
         <div class="text-left">
           <span>地址:</span>
-          {{ props.obj.user.address }}
+          {{ props.obj.user === undefined ? '' : props.obj.user.address }}
         </div>
       </template>
       <template

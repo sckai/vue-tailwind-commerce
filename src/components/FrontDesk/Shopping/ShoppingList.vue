@@ -87,7 +87,7 @@
             </div>
             <div class="flex justify-between my-2 text-right">
               <span>結帳總金額</span>
-              <span class="text-red-500">$ {{ discountPrice }}元</span>
+              <span class="text-red-500">$ {{ discountPrice === 0 ? totalPrice : discountPrice }}元</span>
             </div>
 
             <button
@@ -131,9 +131,9 @@ export default {
       this.$emit('StepComplete', 2)
     },
     CountPrice () {
+      this.totalPrice = 0
       this.$store.getters.cartList.forEach(shoppingItem => {
-        this.totalPrice += Math.ceil(shoppingItem.final_total)
-        this.discountPrice += Math.ceil(shoppingItem.final_total)
+        this.totalPrice = Math.ceil(shoppingItem.final_total) + this.totalPrice
       })
     },
     // API
@@ -144,7 +144,7 @@ export default {
       }
       this.$http.post(api, { data: sendData }).then((response) => {
         if (response.data.success) {
-          this.discountPrice = Math.ceil(response.data.data.final_total)
+          this.discountPrice = response.data.data.final_total
         } else {
           this.$swal('', response.data.message, 'error')
         }
